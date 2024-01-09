@@ -87,7 +87,7 @@ const CampaignDetails = () => {
               <div className="mt-[20px] flex flex-col gap-4">
                 {donators.length > 0 ? donators.map((item, index) => (
                   <div key={`${item.donator}-${index}`} className="flex justify-between items-center gap-4 border-b-[0.25rem]">
-                    <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">{index + 1}. {item.donator}</p>
+                    <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">{index + 1}. {item.donator.slice(0, 4)+'xxxxxx'+item.donator.slice(-4)}</p>
                     <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-ll">{item.donation} ETH</p>
                   </div>
                 )) : (
