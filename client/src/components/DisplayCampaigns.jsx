@@ -26,7 +26,7 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
           </p>
         )}
 
-        {!isLoading && campaigns.length > 0 && campaigns.map((campaign) => <FundCard 
+        {!isLoading && campaigns.length > 0 && campaigns.reverse().map((campaign) => <FundCard 
           key={uuidv4()}
           // key={campaign.id}
           {...campaign}
