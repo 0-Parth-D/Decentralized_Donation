@@ -5,10 +5,12 @@ import { daysLeft } from '../utils';
 
 const FundCard = ({ owner, title, description, target, deadline, amountCollected, image, handleClick }) => {
   const remainingDays = daysLeft(deadline);
+  const imgFilter = remainingDays <=0 ? 'filter grayscale' : '';
+  const profileHidden = remainingDays <=0 ? 'invisible' : '';
   
   return (
-    <div className="sm:w-[288px] w-full rounded-[15px] bg-[#ffffff] cursor-pointer p-2" onClick={handleClick}>
-      <img src={image} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+    <div className={`sm:w-[288px] w-full rounded-[15px] bg-[#ffffff] cursor-pointer p-2`} onClick={handleClick}>
+      <img src={image} alt="fund" className={`w-full h-[158px] object-cover rounded-[15px] ${imgFilter}`}/>
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
@@ -32,7 +34,7 @@ const FundCard = ({ owner, title, description, target, deadline, amountCollected
           </div>
         </div>
 
-        <div className="flex items-center mt-[20px] gap-[12px]">
+        <div className={`flex items-center mt-[20px] gap-[12px] ${profileHidden}`}>
           <div className="w-[30px] h-[30px] rounded-full flex justify-center items-center bg-[#13131a]">
             <img src={thirdweb} alt="user" className="w-1/2 h-1/2 object-contain"/>
           </div>
